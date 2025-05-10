@@ -1,0 +1,22 @@
+Package: okcolors
+Type: Package
+Title: A Set of Color Palettes Inspired by OK Go Music Videos for 'ggplot2' in R
+Version: 0.1.1
+Authors@R: c(
+    person(given = "Nelson de O.", family = "Quesado Filho", email = "nquesado@gmail.com", role = c("aut", "cre")),
+    person(given = "Ana Flávia Teles", family = "Silveira", email = "anaflaviatelesc@gmail.com", role = "aut")
+    )
+Description: A collection of aesthetically appealing color palettes for effective data visualization with 'ggplot2'. Palettes support both discrete and continuous data.
+License: GPL-3
+Encoding: UTF-8
+Imports:
+    ggplot2 (>= 3.0.0)
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+URL: https://github.com/nelsonquesado/okcolors
+BugReports: https://github.com/nelsonquesado/okcolors/issues
+Depends: R (>= 3.5.0)
+RoxygenNote: 7.3.2
+
