@@ -31,7 +31,7 @@ The `okcolors` package provides **three** simple functions:
 1.  `okcolors()` – returns a `n` number of color hex codes from a named `palette`.
 2.  `scale_color_okcolors()` – adds a custom color scale to a `ggplot2` plot.
 3.  `scale_fill_okcolors()` – adds a custom fill scale to a `ggplot2` plot.
-4.  `valid_palettes()` - 
+4.  `valid_palettes()` - lists available palettes in the okcolors Package.
 
 ``` r
 library(ggplot2)
@@ -80,6 +80,9 @@ okcolors('obsession', 12)
 
 <img src="figs/pal.it.jpeg?raw=true" height="250"/>
 
+
+Source: Quesado Filho, N. de O., Guimarães, C. G. C. (2024). _GTFSwizard: Exploring and Manipulating 'GTFS' Files_. R package version 1.1.0, <https://github.com/OPATP/GTFSwizard>.
+
 ### stone - A stone only rolls downhill
 
 <img src="figs/stone.jpeg?raw=true" height="250"/>
@@ -113,7 +116,13 @@ left_join(shp, lu, by = 'id_hex') %>%
   ggplot() +
   geom_sf(aes(fill = value), color = NA) +
   facet_grid(.~name) + 
-  scale_fill_okcolors(pal, discrete = F, transform = 'log', na.value = okcolors(pal, 1, direction = -1), breaks = c(.000001, .0001, .005), labels = c('0,0001%', '0,01%', '0,5%'), name = 'Proportion', direction = -1) +
+  scale_fill_okcolors(pal, discrete = F,
+                      transform = 'log',
+                      na.value = 'gray30',
+                      breaks = c(.000001, .0001, .005),
+                      labels = c('0,0001%', '0,01%', '0,5%'),
+                      name = 'Proportion\n',
+                      direction = -1) +
   theme_linedraw() +
   labs(title = 'Spatial misatch between low-complexity job positions\nand low-income individuals in Fortaleza, Brazil.') +
   theme(legend.position = 'bottom')
@@ -121,7 +130,7 @@ left_join(shp, lu, by = 'id_hex') %>%
 
 <img src="figs/example.skyscrapers.png?raw=true" height="400"/>
 
-Source: Pereira, Rafael H. M. et al. (2022) Distribuição espacial de características sociodemográficas e localização de empregos e serviços públicos das vinte maiores cidades do Brasil. Texto para Discussão 2772. Ipea - Instituto de Pesquisa Econômica Aplicada. http://dx.doi.org/10.38116/td2772
+Source: Pereira, Rafael H. M. et al. (2022) _Distribuição espacial de características sociodemográficas e localização de empregos e serviços públicos das vinte maiores cidades do Brasil._ Texto para Discussão 2772. Ipea - Instituto de Pesquisa Econômica Aplicada. http://dx.doi.org/10.38116/td2772
 
 ### obsession - Obsession
 
